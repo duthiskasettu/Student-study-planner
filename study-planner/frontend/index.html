@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Study Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="header-content">
+        <h1>📚 Study Planner</h1>
+        <button id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Statistics Dashboard -->
+      <section class="stats-grid">
+        <div class="stat-card"><h3>Total Tasks</h3><p id="stat-total">0</p></div>
+        <div class="stat-card pending"><h3>Pending</h3><p id="stat-pending">0</p></div>
+        <div class="stat-card completed"><h3>Completed</h3><p id="stat-completed">0</p></div>
+      </section>
+
+      <!-- Add Assignment Form -->
+      <section class="add-form card">
+        <h2>Add New Assignment</h2>
+        <form id="assignment-form">
+          <div class="input-group">
+            <input type="text" id="title" placeholder="Task Title (e.g. Homework)" required />
+            <input type="text" id="subject" placeholder="Subject (e.g. Math)" required />
+          </div>
+          <div class="input-group">
+            <input type="text" id="assignmentName" placeholder="Description" required />
+            <input type="date" id="deadline" required />
+            <select id="priority" required>
+              <option value="Low">Low Priority</option>
+              <option value="Medium" selected>Medium Priority</option>
+              <option value="High">High Priority</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">+ Add Task</button>
+        </form>
+        <p id="form-msg" class="msg"></p>
+      </section>
+
+      <!-- Task List -->
+      <section class="list card">
+        <div class="list-header">
+          <h2>My Assignments</h2>
+          <div class="controls">
+            <input type="text" id="search" placeholder="🔍 Search tasks..." />
+            <div class="filters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="Pending">Pending</button>
+              <button class="filter-btn" data-filter="Completed">Completed</button>
+            </div>
+          </div>
+        </div>
+        <ul id="assignment-list"></ul>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
